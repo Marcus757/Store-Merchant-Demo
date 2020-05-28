@@ -6,20 +6,13 @@ public class CashRegister : MonoBehaviour
 {
     public StoreMerchant storeMerchant;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnMouseDown()
     {
+        if (storeMerchant.storeCounter.GetDistinctItemCounts().Count == 0)
+            return;
+        
+        storeMerchant.SetSpeechBubbleText();
+        storeMerchant.DisplaySpeechBubble();
         storeMerchant.PlayTalkingAnimation();
     }
 }

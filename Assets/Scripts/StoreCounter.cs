@@ -61,19 +61,18 @@ public class StoreCounter : MonoBehaviour
         return itemCounts;
     }
 
-    public float GetTotal()
+    public decimal GetTotal()
     {
-        float total = 0;
+        decimal total = 0;
 
         foreach (Item item in itemsMappedByPosition.Values)
         {
-            total += item.price;
+            total += System.Convert.ToDecimal(item.price);
         }
 
         Debug.Log(total);
         return total;
     }
-
 
     // For testing methods
     void OnGUI()

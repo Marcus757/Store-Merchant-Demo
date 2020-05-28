@@ -14,7 +14,7 @@ public class Item : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (!gameObject.GetComponentInParent(typeof(StoreCounter)))
+        if (!transform.parent.name.Equals("StoreCounterItems"))
             storeCounter.AddItem(this);
         else
             storeCounter.RemoveItem(this);
