@@ -10,7 +10,9 @@ public class StoreCounter : MonoBehaviour
     public GameObject storeCounterItems;
     public int maxCounterItems;
     public Transform[] positions;
-    private Dictionary<Vector3, Item> itemsMappedByPosition = new Dictionary<Vector3, Item>();
+
+    private static Vector3CoordComparer customComparer = new Vector3CoordComparer();
+    private Dictionary<Vector3, Item> itemsMappedByPosition = new Dictionary<Vector3, Item>(customComparer);
 
 
     public void AddItem(Item item)
